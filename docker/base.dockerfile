@@ -1,10 +1,11 @@
-FROM ubuntu:23.04
+FROM ubuntu:23.10
 
 RUN apt update && apt upgrade -y
 
 RUN apt install -y      \
     protobuf-compiler   \
     python3             \
+    python3-numpy       \
     python3-boto3       \
     python3-flask       \
     python3-flask-cors  \
@@ -21,3 +22,6 @@ ADD https://api.github.com/repos/zipengliang21/CMPT756-Map-Serverful-and-Serverl
 RUN wget https://codeload.github.com/zipengliang21/CMPT756-Map-Serverful-and-Serverless-Comparison/zip/refs/heads/main
 RUN unzip main && rm main
 RUN mv CMPT756-Map-Serverful-and-Serverless-Comparison-main codebase
+
+WORKDIR /home/codebase/src/mutation
+RUN protoc --python_out=proto_py --proto_path=proto  `find proto -name *.proto`

@@ -128,7 +128,7 @@ function App() {
             start_node_id: parseInt(sourceId),
             dst_node_id: parseInt(destinationId),
         };
-        axios.post(`http://navigation.e8yes.org/queryPath`, data)
+        axios.post(`http://localhost:6001/queryPath`, data)
             .then(response => {
                 console.log(response)
                 const path = response.data.join(" -> ");

@@ -18,10 +18,10 @@ RUN apt install -y      \
 WORKDIR /home
 
 # Downloads the codebase.
-ADD https://api.github.com/repos/zipengliang21/CMPT756-Map-Serverful-and-Serverless-Comparison/commits?per_page=1 latest_commit
-RUN wget https://codeload.github.com/zipengliang21/CMPT756-Map-Serverful-and-Serverless-Comparison/zip/refs/heads/main
+ADD https://api.github.com/repos/hongyingyue/R-CMPT756-Map-Serverful-and-Serverless-Comparison/commits?per_page=1 latest_commit
+RUN wget https://codeload.github.com/hongyingyue/R-CMPT756-Map-Serverful-and-Serverless-Comparison/zip/refs/heads/main
 RUN unzip main && rm main
-RUN mv CMPT756-Map-Serverful-and-Serverless-Comparison-main codebase
+RUN mv R-CMPT756-Map-Serverful-and-Serverless-Comparison-main codebase
 
 WORKDIR /home/codebase/src/mutation
 RUN protoc --python_out=proto_py --proto_path=proto  `find proto -name *.proto`

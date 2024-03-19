@@ -1,11 +1,10 @@
-FROM hongyingyue/756base:latest
+FROM hongyingyue/cmpt756-g17:base
 
 WORKDIR /home/codebase
-EXPOSE 6000
 
 CMD ["python3",                                                         \
     "-m",                                                               \
     "src.gis.main_server",                                              \
-    "--gis_db_host=gis.cgsdx2jwjyw3.ca-central-1.rds.amazonaws.com",    \
+    "--gis_db_host=35.223.27.246",                                      \
     "--gis_db_user=postgres",                                           \
     "--gis_db_password=12345678"]

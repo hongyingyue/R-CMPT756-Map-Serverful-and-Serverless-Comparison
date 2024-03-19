@@ -34,4 +34,4 @@ if __name__ == "__main__":
                  gis_db_user=args.gis_db_user,
                  gis_db_password=args.gis_db_password)
     CORS(app)
-    app.run(host="0.0.0.0", port=6000)
+    app.run(host="0.0.0.0")

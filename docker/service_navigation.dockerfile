@@ -1,7 +1,7 @@
-FROM hongyingyue/756base:latest
+FROM hongyingyue/hongyingyue/cmpt756-g17:base
 
 WORKDIR /home/codebase
-EXPOSE 6001
+
 CMD ["python3",                                                                     \
     "-m",                                                                           \
     "src.navigation.main_server",                                                   \
